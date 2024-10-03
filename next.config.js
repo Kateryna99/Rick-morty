@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: 'Rick-Morty',
+    basePath: '/Rick-Morty"',
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
 };
