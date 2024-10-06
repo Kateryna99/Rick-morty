@@ -9,7 +9,7 @@ import {FC} from "react";
 import {usePathname} from "next/navigation";
 
 interface Props {
-    mobile?
+    mobile?: boolean;
 }
 
 export const Navigation: FC<Props> = ({mobile}) => {
