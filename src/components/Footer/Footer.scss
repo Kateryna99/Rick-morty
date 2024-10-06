@@ -1,0 +1,76 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  padding: 20px 0;
+
+  width: 100%;
+
+  background-color: rgba(10, 10, 10, 0.8);
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  @media (min-width:767px) {
+    position: relative;
+    bottom: unset;
+    left: unset;
+  }
+
+
+  &__text {
+    display: none;
+
+    @media (min-width:767px) {
+      display: block;
+
+      color: #66FF00;
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+}
+
+.nav-footer {
+
+}
+
+.nav {
+  &__list {
+    &--footer {
+      justify-content: space-between;
+
+      @media (min-width:767px) {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+  }
+
+  &__icon {
+    &--active {
+    }
+  }
+}
+
+.icon-home {
+}
+
+.icon-rick {
+}
+
+.icon-episodes {
+}
+
+.icon-map {
+}
+
+.icon-star {
+}

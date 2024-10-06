@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -12,8 +12,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out 1s forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

@@ -11,11 +11,16 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "classnames": "^2.5.1",
     "next": "14.2.14",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.79.4",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
