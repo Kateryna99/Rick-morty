@@ -1,4 +1,4 @@
-'use client'
+/*'use client'
 
 import { useEffect, useState } from 'react';
 
@@ -31,9 +31,9 @@ const Loader = () => {
                     className="progress-fill"
                     style={{ width: `${progress}%`}} // Ширина лінії прогресу
                 ></div>
-            <div className="progress-text">{progress}%</div> {/* Відображення цифр */}
+            <div className="progress-text">{progress}%</div> {/!* Відображення цифр *!/}
         </div>
     );
 };
 
-export default Loader;
+export default Loader;*/
