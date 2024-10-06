@@ -10,7 +10,7 @@ const StarsBackground = () => {
         const starsContainer = document.createElement('div');
         starsContainer.className = 'stars';
         const wrapper = document.querySelector('.wrapper');
-        wrapper.appendChild(starsContainer); // Додаємо контейнер до тіла
+        wrapper?.appendChild(starsContainer); // Додаємо контейнер до тіла
 
         for (let i = 0; i < starsCount; i++) {
             const star = document.createElement('div');
@@ -32,7 +32,7 @@ const StarsBackground = () => {
 
         // Очищаємо контейнер при розмонтуванні компонента
         return () => {
-            wrapper.removeChild(starsContainer);
+            wrapper?.removeChild(starsContainer);
         };
     }, []);
 
