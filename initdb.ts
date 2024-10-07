@@ -19,17 +19,17 @@ const planetsList = [
     {
         title: 'Snake Planet',
         temperature: '70℉',
-        image: '/planets/snake_planet.jpg',
+        image: '/Rick-Morty/planets/snake_planet.jpg',
     },
     {
         title: 'Gazorpazorp Planet',
         temperature: '360℉',
-        image: '/planets/gazo.jpg',
+        image: '/Rick-Morty/planets/gazo.jpg',
     },
     {
         title: 'Kepler Planet',
         temperature: '10℉',
-        image: '/planets/kepler.jpg',
+        image: '/Rick-Morty/planets/kepler.jpg',
     },
 ];
 
