@@ -5,69 +5,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83a8c5e0-3394-48f0-8039-71da6dd6acc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/CustomLoader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ClientLayout/ClientLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/nav/Navigation.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/nav/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stars/starsBackground.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/Routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Bold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-BoldItalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-BoldItalic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-BoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-BoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/Playfair/PlayfairDisplay-SemiBoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useActive.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/back.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/home.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/rick_fun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/ricn_morty_fun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/rocket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/banner.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bannerdb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/pickle-rick.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/red_eyes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/rick_arms.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/rick_computer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/voilet_color.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/planets/burma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/planets/gramuflack.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/planets/sexy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/character/CharacterDetails/CharacterDetails.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/character/CharacterDetails/CharacterDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/character/CharactersCatalog/CharactersCatalog.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/character/CharactersCatalog/CharactersCatalog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/character/CharactersList/CharactersList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/episode/EpisodesCatalog/EpisodesCatalog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/episode/EpisodesList/EpisodesList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/location/LocationsCatalog/LocationsCatalog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/location/LocationsList/LocationList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/styles/DataList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BaseCatalogPage/BaseCatalogContent.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BaseCatalogPage/BaseCatalogContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ClientLayout/ClientLayout.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/FilterButtons/FilterButtons.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/FilterButtons/FilterButtons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/FiltersComponent.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/FiltersComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/SearchInput/SearchInput.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FiltersComponent/SearchInput/SearchInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/currentPath/CurrentPath.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/currentPath/CurrentPath.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/HomePage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/HomePage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StartLoader/StartLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StartPage/StartPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loader/Loader.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loadingPage/LoadingPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loadingPage/LoadingPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pagination/Pagination.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pagination/Pagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pagination/hooks/usePagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sliders/BannerSlider/BannerSlider.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sliders/BannerSlider/BannerSlider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/FilterQueries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/PlaceholderWords.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/RootApiLink.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/Loader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/Pause.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/SearchQueries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/characterSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/episodeSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/filterSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/locationSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getFetchStatus.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getFilteredList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getPause.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/isProcessProduction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/banner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sceletons/CharacterSceleton.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sceletons/CharacterSceleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Banner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Character.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Episode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Filter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Location.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/Search.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initdb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/planetsdb.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/fonts/GeistMonoVF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/fonts/GeistVF.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets.db" beforeDir="false" afterPath="$PROJECT_DIR$/planets.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/characters/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/character/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/episodes/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/episode/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/favorites/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favorite/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/locations/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/location/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientLayout/ClientLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientLayout/ClientLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/nav/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/nav/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/nav/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/nav/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/planetSlider/PlanetSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sliders/PlanetSlider/PlanetSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/planetSlider/PlanetSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sliders/PlanetSlider/PlanetSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/Routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/Routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useHandleFirstSession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useHandleFirstSession.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/iconsFiles/icomoon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/planets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/planets.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Planet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Planet.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +118,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="SCSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
-        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -100,8 +140,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Katya/Desktop/phone-catalog",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Katya/Desktop/marvel_starter",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -125,11 +167,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\images" />
-      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\hooks" />
-      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\app" />
       <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\icons\iconsFiles" />
-      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\public\images" />
+      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\components\BaseCatalogPage" />
+      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\app\styles" />
+      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\components\pagination\hooks" />
+      <recent name="C:\Users\Katya\Desktop\Practice\rick-morty\src\components\pagination" />
     </key>
   </component>
   <component name="RunManager">
@@ -167,11 +209,17 @@
       <workItem from="1727986815171" duration="2811000" />
       <workItem from="1728054498088" duration="2219000" />
       <workItem from="1728069664734" duration="14501000" />
-      <workItem from="1728085892284" duration="25666000" />
+      <workItem from="1728085892284" duration="84276000" />
+      <workItem from="1728420875279" duration="13874000" />
+      <workItem from="1728478291185" duration="15539000" />
+      <workItem from="1728562882183" duration="43546000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

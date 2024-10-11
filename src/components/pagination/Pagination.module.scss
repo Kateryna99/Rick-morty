@@ -1,0 +1,84 @@
+.pagination {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 18px;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: #fff;
+
+  transition-duration: 0.3s;
+
+  &::before {
+    content: '\e905';
+    font-family: 'icomoon';
+
+    color: #000;
+    font-size: 20px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.prev {
+   &::before {
+     transform: rotate(-90deg);
+   }
+  }
+
+  &.next{
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.totalPages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.pageNumber {
+  padding-bottom: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: #fff;
+
+  color: #000;
+
+  font-weight: 700;
+  font-size: 18px;
+
+  &.active {
+    background-color: #66FF00;
+  }
+}

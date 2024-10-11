@@ -1,0 +1,45 @@
+.loader {
+  height: 90px;
+  width: 250px;
+
+  &.mainLoader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+.progressBar {
+   height: 20px;
+   width: 0;
+
+  background-color: #66FF00;
+}
+
+.text {
+  color: #fff;
+  font-size: 120px;
+  font-weight: 700;
+
+  line-height: 30px;
+  text-align: center;
+
+  @media (min-width: 991px) {
+    font-size: 160px;
+  }
+
+  &.mainLoader {
+    font-size: 18px;
+    color: #66FF00;
+
+    &::after {
+      content: "%";
+    }
+
+    @media (min-width: 991px) {
+      font-size: 20px;
+    }
+  }
+}

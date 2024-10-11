@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:  url('iconsFiles/icomoon.eot?xk20yp');
-    src:  url('iconsFiles/icomoon.eot?xk20yp#iefix') format('embedded-opentype'),
-    url('iconsFiles/icomoon.ttf?xk20yp') format('truetype'),
-    url('iconsFiles/icomoon.woff?xk20yp') format('woff'),
-    url('iconsFiles/icomoon.svg?xk20yp#icomoon') format('svg');
+    src:  url('iconsFiles/icomoon.eot?i82lmk');
+    src:  url('iconsFiles/icomoon.eot?i82lmk#iefix') format('embedded-opentype'),
+    url('iconsFiles/icomoon.ttf?i82lmk') format('truetype'),
+    url('iconsFiles/icomoon.woff?i82lmk') format('woff'),
+    url('iconsFiles/icomoon.svg?i82lmk#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -25,12 +25,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-logo:before {
-    content: "\e904";
-}
-.icon-characters:before {
-    content: "\e905";
-}
 .icon-arrow-right:before {
     content: "\e900";
 }
@@ -40,12 +34,27 @@
 .icon-characters2:before {
     content: "\e902";
 }
-.icon-home:before {
-    content: "\e90c";
-}
 .icon-locations:before {
     content: "\e903";
 }
+.icon-netflix_logo:before {
+    content: "\e904";
+}
+.icon-characters:before {
+    content: "\e906";
+}
 .icon-favorites:before {
-    content: "\e9d7";
+    content: "\e9d8";
+}
+.icon-chevron-up:before {
+    content: "\e905";
+}
+.icon-home:before {
+    content: "\e90c";
+}
+.icon-star:before {
+    content: "\e907";
+}
+.icon-search:before {
+    content: "\e986";
 }

@@ -1,6 +1,6 @@
-// src/lib/planets.js
-import db from '../../initdb'; // Імпортуємо екземпляр бази даних
+
+import db from '../../planetsdb';
 
 export const getPlanets = <T>(): T[] => {
-    return db.prepare('SELECT * FROM planets').all() as T[];
+    return db.prepare('SELECT * FROM planets ORDER BY RANDOM() LIMIT 3').all() as T[];
 };

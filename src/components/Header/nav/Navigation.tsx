@@ -10,24 +10,32 @@ import {usePathname} from "next/navigation";
 
 interface Props {
     mobile?: boolean;
+    desktop?: boolean;
+    isLoading?: boolean;
 }
 
-export const Navigation: FC<Props> = ({mobile}) => {
-    const path = usePathname()
+export const Navigation: FC<Props> = ({mobile, desktop, isLoading}) => {
+    const path = usePathname();
 
-    console.log(path)
+    const isLinkActive = (key: string, value: string) => {
+        return key === 'home' ? path === value : path.startsWith(value)
+    }
 
     return (
         <nav className={classNames(styles.nav, {
             [styles.mobile]: mobile,
+            [styles.desktop]:desktop,
+            [styles.active]: !isLoading || path !== Routes.home,
         })}>
-            <ul className={classNames("flex gap-4 md:gap-6 items-center", {
-                "justify-between": mobile,
+            <ul className={classNames(styles.list, {
+                [styles.desktop]: desktop,
             })}>
                 {Object.entries(Routes).map(([key,value]) => (
-                    <li key={key} className={styles.navItem}>
+                    <li key={key} className={classNames(styles.navItem, {
+                        [styles.active]: isLinkActive(key, value),
+                    })}>
                         <Link data-title={key} className={classNames(styles.link, `icon-${key}`, {
-                            [styles.active]: key === 'home' ? path === value : path.startsWith(value)
+                            [styles.active]: isLinkActive(key, value)
                         })} href={value}></Link>
                     </li>
                 ))}

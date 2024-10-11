@@ -1,0 +1,1 @@
+export const RootApiLink = "https://rickandmortyapi.com/api";

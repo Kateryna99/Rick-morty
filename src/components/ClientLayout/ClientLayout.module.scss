@@ -1,0 +1,9 @@
+.padding {
+  padding: 0 16px;
+
+  flex-direction: column;
+
+  @media(min-width: 767px) and (max-width: 1500px) {
+    padding-left: 100px;
+  }
+}

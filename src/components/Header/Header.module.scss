@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #fff;
+
+  transform: translateY(-100%);
+  transition-duration: 0.5s;
+
+  &.active {
+    transform: translateY(0);
+  }
+}

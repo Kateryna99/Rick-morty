@@ -1,9 +1,19 @@
-/*'use client'
+'use client'
 
-import { useEffect, useState } from 'react';
+import {FC, useEffect, useState} from 'react';
 
-const Loader = () => {
-    const [progress, setProgress] = useState(0); // Стейт для зберігання прогресу
+import styles from './Loader.module.scss';
+import classNames from "classnames";
+
+interface Props {
+    progressFill?: boolean;
+    progressValue: number;
+    progressSpeed: number;
+    progressStart: number;
+}
+
+const Loader: FC<Props> = ({progressFill,  progressValue, progressSpeed, progressStart }) => {
+    const [progress, setProgress] = useState(progressStart);
 
     useEffect(() => {
         let progressInterval = 1;
@@ -11,29 +21,33 @@ const Loader = () => {
         const startLoading = () => {
             progressInterval = setInterval(() => {
                 setProgress((prevProgress) => {
-                    if (prevProgress >= 100) {
-                        clearInterval(progressInterval); // Зупиняємо, якщо досягли 100%
-                        return 100;
+                    if (prevProgress >= progressValue) {
+                        clearInterval(progressInterval);
+                        return progressValue;
                     }
-                    return prevProgress + 1; // Збільшуємо на 1 кожен раз
+                    return prevProgress + 1;
                 });
-            }, 40); // 40 мс для досягнення 100% за 4 секунди
+            }, progressSpeed);
         };
 
         startLoading();
 
-        return () => clearInterval(progressInterval); // Очищуємо інтервал при розмонтуванні компонента
+        return () => clearInterval(progressInterval);
     }, []);
 
     return (
-        <div className="loader-container">
-                <div
-                    className="progress-fill"
-                    style={{ width: `${progress}%`}} // Ширина лінії прогресу
-                ></div>
-            <div className="progress-text">{progress}%</div> {/!* Відображення цифр *!/}
+        <div className={classNames(styles.loader, {
+            [styles.mainLoader]: progressFill
+        })}>
+            {progressFill && (<div
+                className={styles.progressBar}
+                style={{width: `${progress}%`}}
+            ></div>)}
+            <p className={classNames(styles.text, {
+                [styles.mainLoader]: progressFill
+            })}>{progress}</p>
         </div>
     );
 };
 
-export default Loader;*/
+export default Loader;

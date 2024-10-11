@@ -1,0 +1,21 @@
+.catalog {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogWrapper {
+  padding: 85px 0 10px;
+
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 0.22fr 0.56fr 0.22fr;
+  gap: 30px;
+
+  &.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

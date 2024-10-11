@@ -1,7 +1,7 @@
 export enum Routes {
     home = '/',
-    characters = '/characters',
-    episodes = '/episodes',
-    locations = '/locations',
-    favorites = '/favorites',
+    characters = '/character',
+    episodes = '/episode',
+    locations = '/location',
+    favorites = '/favorite',
 }

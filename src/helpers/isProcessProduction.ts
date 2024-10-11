@@ -1,0 +1,1 @@
+export const isProcessProduction = process.env.NODE_ENV === 'production';

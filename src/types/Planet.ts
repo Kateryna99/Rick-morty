@@ -1,5 +1,5 @@
 export interface Planet {
-    id: number | string;
+    id: number;
     title: string;
     temperature: string;
     image: string;

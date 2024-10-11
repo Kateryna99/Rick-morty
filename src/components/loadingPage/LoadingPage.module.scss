@@ -1,0 +1,27 @@
+.loading {
+  height: 100svh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  max-width: 300px;
+  width: 100%;
+  height: 50vh;
+  max-height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}

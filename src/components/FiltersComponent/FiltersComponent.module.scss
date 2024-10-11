@@ -1,0 +1,19 @@
+.filter {
+  max-width: 810px;
+  width: 100%;
+}
+
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterDropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterSearch {
+}
