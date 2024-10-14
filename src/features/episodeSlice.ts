@@ -25,7 +25,7 @@ const initialState: PageSliceState = {
   error: false,
 };
 
-export const fetchEpisodesData = createAsyncThunk<Episode[], string>(
+export const fetchEpisodesData = createAsyncThunk<Episode[]>(
   "EpisodesSlice/fetchEpisodesData",
   async () => {
     const response = await fetch(`${RootApiLink}/episode`);
