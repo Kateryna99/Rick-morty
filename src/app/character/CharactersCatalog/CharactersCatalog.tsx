@@ -1,6 +1,5 @@
 "use client";
 
-import { useDispatch } from "react-redux";
 import { usePagination } from "@/components/pagination/hooks/usePagination";
 import { useEffect, useMemo } from "react";
 
@@ -95,7 +94,7 @@ export const CharactersCatalog = () => {
       queryValue: nameQuery,
       wordsList: PLACEHOLDER_CHARACTERS_WORDS,
       queryType: SearchQueries.name,
-      setQuery: setNameQuery,
+      setQuery: (value) => dispatch(setNameQuery(value)),
     },
   ];
 

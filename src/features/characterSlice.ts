@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { Character } from "@/types/Character";
 import { RootApiLink } from "@/constants/RootApiLink";
 import { getPause } from "@/helpers/getPause";
@@ -65,7 +65,7 @@ export const CharacterSlice = createSlice({
   name: "characters",
   initialState: initialState,
   reducers: {
-    setNameQuery: (state, action) => {
+    setNameQuery: (state, action: PayloadAction<string>) => {
       state.nameQuery = action.payload;
     },
     setCharacter: (state, action) => {

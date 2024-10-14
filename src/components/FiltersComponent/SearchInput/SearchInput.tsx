@@ -24,7 +24,7 @@ export const SearchInput = ({
   const handleFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    dispatch(setQuery(value));
+    setQuery(value);
 
     const newSearchParams = new URLSearchParams(searchParams.toString());
 
@@ -41,7 +41,7 @@ export const SearchInput = ({
     const nameParam = searchParams.get(queryType);
 
     if (nameParam) {
-      dispatch(setQuery(nameParam));
+      setQuery(nameParam);
     }
   }, [searchParams, dispatch]);
 
