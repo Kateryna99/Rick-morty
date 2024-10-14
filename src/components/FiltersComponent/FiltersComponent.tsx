@@ -4,9 +4,10 @@ import styles from "./FiltersComponent.module.scss";
 import { SearchInput } from "@/components/FiltersComponent/SearchInput/SearchInput";
 import { FilterButtons } from "@/components/FiltersComponent/FilterButtons/FilterButtons";
 import { Search } from "@/types/Search";
+import { Filter } from "@/types/Filter";
 
 interface Props {
-  dropDownList?: FilterButtons[];
+  dropDownList?: Filter[];
   searchList: Search[];
 }
 
