@@ -74,7 +74,7 @@ const CharacterPage = () => {
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(-90deg)" }}
                 onClick={handlePrevCharacter}
-                disabled={getSelectedCharacterId() == 1}
+                disabled={getSelectedCharacterId() === 1}
               />
 
               <div className={styles.characterImage}>
@@ -85,42 +85,42 @@ const CharacterPage = () => {
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(90deg)" }}
                 onClick={handleNextCharacter}
-                disabled={getSelectedCharacterId()  == charactersList.length}
+                disabled={getSelectedCharacterId() === charactersList.length}
               />
             </div>
 
             <div className={styles.characterMain}>
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Name:</h5>
-                <p className={styles.characterText}>{character.name}</p>
+                <p className={styles.characterText}>{character?.name}</p>
               </div>
 
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Status:</h5>
-                <p className={styles.characterText}>{character.status}</p>
+                <p className={styles.characterText}>{character?.status}</p>
               </div>
 
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Species:</h5>
-                <p className={styles.characterText}>{character.species}</p>
+                <p className={styles.characterText}>{character?.species}</p>
               </div>
 
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Gender:</h5>
-                <p className={styles.characterText}>{character.gender}</p>
+                <p className={styles.characterText}>{character?.gender}</p>
               </div>
 
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Birth Place:</h5>
                 <p className={styles.characterText}>
-                  {character.origin?.name.split(" ").slice(0, 1)}
+                  {character?.origin.name.split(" ").slice(0, 1)}
                 </p>
               </div>
 
               <div className={classNames(styles.characterBlock, styles.column)}>
                 <h5 className={styles.characterTitle}>Episodes:</h5>
                 <div className={styles.episodeList}>
-                  {character.episode?.slice(0, 1).map((item, index) => (
+                  {character?.episode.slice(0, 1).map((item, index) => (
                     <Link href={item} key={index}>
                       Episode {item.split("/").pop()}
                     </Link>
