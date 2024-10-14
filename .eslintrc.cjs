@@ -40,10 +40,10 @@ module.exports = {
                     { blankLine: 'always', prev: 'directive', next: '*' },
                     { blankLine: 'always', prev: 'block-like', next: '*' },
                 ],
-                /*'@typescript-eslint/no-unused-vars': [
-                    'error',
-                    { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },
-                ],*/
+                "@typescript-eslint/no-unused-vars": "off",
+                "@next/next/no-img-element": "off",
+
+                /*'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },],*/
             },
         },
     ],
