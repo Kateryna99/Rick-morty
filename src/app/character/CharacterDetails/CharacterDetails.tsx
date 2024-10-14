@@ -113,14 +113,14 @@ const CharacterPage = () => {
               <div className={styles.characterBlock}>
                 <h5 className={styles.characterTitle}>Birth Place:</h5>
                 <p className={styles.characterText}>
-                  {character?.origin.name.split(" ").slice(0, 1)}
+                  {character?.origin?.name?.split(" ").slice(0, 1)}
                 </p>
               </div>
 
               <div className={classNames(styles.characterBlock, styles.column)}>
                 <h5 className={styles.characterTitle}>Episodes:</h5>
                 <div className={styles.episodeList}>
-                  {character?.episode.slice(0, 1).map((item, index) => (
+                  {character?.episode?.slice(0, 1).map((item, index) => (
                     <Link href={item} key={index}>
                       Episode {item.split("/").pop()}
                     </Link>
