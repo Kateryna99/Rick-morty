@@ -12,7 +12,7 @@ import {
   fetchEpisodesData,
   setEpisodeCodeQuery,
 } from "@/features/episodeSlice";
-import { Episode } from "@/types/Episode";
+
 import { FiltersComponent } from "@/components/FiltersComponent/FiltersComponent";
 import {
   PLACEHOLDER_EPISODES_CODE_WORDS,
@@ -21,7 +21,7 @@ import {
 import { SearchQueries } from "@/enums/SearchQueries";
 import { setNameQuery } from "@/features/episodeSlice";
 import { getFilteredList } from "@/helpers/getFilteredList";
-import {useAppDispatch, useAppSelector} from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 export const EpisodesCatalog = () => {
   const dispatch = useAppDispatch();

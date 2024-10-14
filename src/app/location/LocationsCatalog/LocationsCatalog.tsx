@@ -1,16 +1,14 @@
 "use client";
 
-import { useDispatch } from "react-redux";
 import { usePagination } from "@/components/pagination/hooks/usePagination";
 import { useEffect } from "react";
 
 import { LoadingPage } from "@/components/loadingPage/LoadingPage";
 import { Pagination } from "@/components/pagination/Pagination";
-import { CharactersList } from "@/app/character/CharactersList/CharactersList";
+
 
 import { BaseCatalogContent } from "@/components/BaseCatalogPage/BaseCatalogContent";
 import { fetchLocationsData } from "@/features/locationSlice";
-import { Location } from "@/types/Location";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 export const LocationsCatalog = () => {

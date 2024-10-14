@@ -1,124 +1,62 @@
 module.exports = {
-    env: {
-        browser: true,
-        es2024: true,
-    },
-    extends: [
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended',
-        'airbnb-typescript',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
-        'next/core-web-vitals'
-    ],
+    root: true, // Вказуємо, що це коренева конфігурація
     overrides: [
         {
-            files: ['**/*.spec.jsx'],
+            files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], // Які файли перевіряти
+            parser: "@typescript-eslint/parser", // Використовуємо парсер TypeScript
+            parserOptions: {
+                ecmaVersion: 2020, // Версія ECMAScript
+                sourceType: "module", // Використання модулів
+                ecmaFeatures: {
+                    jsx: true, // Дозволити JSX
+                },
+            },
+            globals: {
+                browser: "readonly", // Глобальні змінні
+            },
             rules: {
-                'react/jsx-filename-extension': ['off'],
+                "no-console": "error", // Попередження при використанні console
+                "eqeqeq": "error", // Помилка при використанні не строгого рівності
+                'no-unused-expressions': 'off',
+                "curly": "error", // Помилка при відсутності фігурних дужок
+                "indent": ["error", 2], // Два пробіли для відступів
+                "max-len": ["error", { code: 100 , ignoreUrls: true, ignorePattern: '^.*(className=".*"|className=\'.*\').*$'}], // Максимальна довжина рядка
+                "object-curly-spacing": ["error", "always"], // Пробіли в об'єктах
+                "react/react-in-jsx-scope": "off", // Вимкнення правила для React
+                "react/prop-types": "off", // Вимкнення перевірки PropTypes
+                "react/jsx-uses-react": "warn", // Попередження для використання React
+                "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".tsx"] }], // Розширення файлів для JSX
+                "@typescript-eslint/no-explicit-any": "warn", // Попередження для явного використання any
+                "@typescript-eslint/explicit-function-return-type": "off", // Вимкнення правила для повертаючих типів функцій
+                "@typescript-eslint/no-inferrable-types": "warn", // Попередження для невизначених типів
+                "no-undef": "off", // Вимкнення правила для невизначених змінних
+                "no-trailing-spaces": "error",
+                'padding-line-between-statements': [
+                    2,
+                    { blankLine: 'always', prev: '*', next: 'return' },
+                    { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+                    { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+                    { blankLine: 'always', prev: 'directive', next: '*' },
+                    { blankLine: 'always', prev: 'block-like', next: '*' },
+                ],
+                '@typescript-eslint/no-unused-vars': [
+                    'error',
+                    { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },
+                ],
             },
         },
     ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-        ecmaVersion: 2020,
-        project: './tsconfig.json',
-        sourceType: 'module',
-    },
-    plugins: ['jsx-a11y', 'import', 'react-hooks', '@typescript-eslint', 'prettier'],
-    rules: {
-        semi: 'off',
-        '@typescript-eslint/semi': ['error', 'always'],
-        'prefer-const': 2,
-        curly: [2, 'all'],
-        'max-len': [
-            'error',
-            {
-                code: 100,
-                ignoreTemplateLiterals: true,
-                ignoreComments: true,
-            },
-        ],
-        'no-redeclare': [2, { builtinGlobals: true }],
-        'no-console': 2,
-        'operator-linebreak': 0,
-        'brace-style': [2, '1tbs'],
-        'arrow-body-style': 0,
-        'arrow-parens': 0,
-        'no-param-reassign': [2, { props: true }],
-        'padding-line-between-statements': [
-            2,
-            { blankLine: 'always', prev: '*', next: 'return' },
-            { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-            { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
-            { blankLine: 'always', prev: 'directive', next: '*' },
-            { blankLine: 'always', prev: 'block-like', next: '*' },
-        ],
-
-        // React
-        'react/prop-types': 0,
-        'react/require-default-props': 0,
-        'import/prefer-default-export': 0,
-        'standard/no-callback-literal': 0,
-        'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-        'react/destructuring-assignment': 0,
-        'react/jsx-props-no-spreading': 0,
-        'react/state-in-constructor': [2, 'never'],
-        'react-hooks/rules-of-hooks': 2,
-        'jsx-a11y/label-has-associated-control': [
-            'error',
-            {
-                assert: 'either',
-            },
-        ],
-        'jsx-a11y/label-has-for': [
-            2,
-            {
-                components: ['Label'],
-                required: {
-                    some: ['id', 'nesting'],
-                },
-                allowChildren: true,
-            },
-        ],
-        'react/jsx-uses-react': 'off',
-        'react/react-in-jsx-scope': 'off',
-
-        // Typescript
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-unused-vars': [
-            'error',
-            { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },
-        ],
-        '@typescript-eslint/indent': ['error', 2],
-        '@typescript-eslint/ban-types': [
-            'error',
-            {
-                extendDefaults: true,
-                types: {
-                    '{}': false,
-                },
-            },
-        ],
-        'import/extensions': [
-            'error',
-            'ignorePackages',
-            {
-                ts: 'never',
-                tsx: 'never',
-            },
-        ],
-    },
-    ignorePatterns: ['.next', '.eslintrc.cjs', 'cypress'],
+    // Додайте конфігурації плагінів без "extends"
+    // Використовуйте рекомендації плагінів напряму
+    extends: [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:@next/eslint-plugin-next/recommended",
+        "eslint:recommended",
+    ],
     settings: {
         react: {
-            version: 'detect',
+            version: "detect", // Автоматичне визначення версії React
         },
     },
 };
-

@@ -1,4 +1,4 @@
-import {Character} from "@/types/Character";
+import { Character } from "@/types/Character";
 
 export interface Episode {
     id: number;

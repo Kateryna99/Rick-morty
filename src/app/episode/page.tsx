@@ -1,9 +1,9 @@
-import {EpisodesCatalog} from "@/app/episode/EpisodesCatalog/EpisodesCatalog";
+import { EpisodesCatalog } from "@/app/episode/EpisodesCatalog/EpisodesCatalog";
 
 const EpisodesPage = () => {
-    return (
-       <EpisodesCatalog />
-    )
+  return (
+    <EpisodesCatalog />
+  )
 }
 
 export default EpisodesPage;

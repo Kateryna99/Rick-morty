@@ -1,9 +1,9 @@
-import {LocationsCatalog} from "@/app/location/LocationsCatalog/LocationsCatalog";
+import { LocationsCatalog } from "@/app/location/LocationsCatalog/LocationsCatalog";
 
 const LocationsPage = () => {
-    return (
-        <LocationsCatalog />
-    )
+  return (
+    <LocationsCatalog />
+  )
 }
 
 export default LocationsPage;

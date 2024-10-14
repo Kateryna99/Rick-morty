@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <div className='wrapper'>
+        <div className='wrapper'>
           <StarsBackground/>
           <ClientLayout>
-              {children}
+            {children}
           </ClientLayout>
-      </div>
+        </div>
       </body>
     </html>
   );

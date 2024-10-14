@@ -20,7 +20,7 @@ const CharacterPage = () => {
   );
 
   const getSelectedCharacterId = () => {
-    if (selectedId != null) {
+    if (selectedId !== null) {
       const id = parseInt(selectedId, 10);
 
       return !isNaN(id) ? id : null;

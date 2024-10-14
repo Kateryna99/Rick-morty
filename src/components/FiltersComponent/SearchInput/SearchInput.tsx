@@ -34,7 +34,7 @@ export const SearchInput = ({
       newSearchParams.delete(queryType);
     }
 
-    router.push(`?${newSearchParams.toString()}`, { shallow: true });
+    router.push(`?${newSearchParams.toString()}` /*{ shallow: true }*/);
   };
 
   useEffect(() => {
@@ -87,7 +87,6 @@ export const SearchInput = ({
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className={styles.label}>
       <input
         className={styles.input}

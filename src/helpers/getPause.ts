@@ -1,5 +1,5 @@
-import {Pause} from "@/enums/Pause";
+import { Pause } from "@/enums/Pause";
 
 export const getPause = (duration: Pause) => {
-    return new Promise(resolve => setTimeout(resolve, duration));
+  return new Promise(resolve => setTimeout(resolve, duration));
 }
