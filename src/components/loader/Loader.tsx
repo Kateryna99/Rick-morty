@@ -16,7 +16,7 @@ const Loader: FC<Props> = ({ progressFill,  progressValue, progressSpeed, progre
   const [progress, setProgress] = useState(progressStart);
 
   useEffect(() => {
-    let progressInterval = 1;
+    let progressInterval: number = 1;
 
     const startLoading = () => {
       progressInterval = setInterval(() => {
