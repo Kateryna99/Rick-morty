@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './Loader.module.scss';
 import classNames from "classnames";
+import {number} from 'prop-types';
 
 interface Props {
     progressFill?: boolean;
@@ -16,7 +17,7 @@ const Loader: FC<Props> = ({ progressFill,  progressValue, progressSpeed, progre
   const [progress, setProgress] = useState(progressStart);
 
   useEffect(() => {
-    let progressInterval: number = 1;
+    let progressInterval = 1;
 
     const startLoading = () => {
       progressInterval = setInterval(() => {

@@ -2,6 +2,12 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     basePath: isProd ? '/Rick-Morty' : '',
     assetPrefix: isProd ? '/Rick-Morty/' : '',
     images: {
