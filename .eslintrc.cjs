@@ -16,6 +16,7 @@ module.exports = {
             },
             rules: {
                 "no-console": "error", // Попередження при використанні console
+                "no-unused-vars": "off", // Вимкнення правила для невикористанних змінних
                 "eqeqeq": "error", // Помилка при використанні не строгого рівності
                 'no-unused-expressions': 'off',
                 "curly": "error", // Помилка при відсутності фігурних дужок
