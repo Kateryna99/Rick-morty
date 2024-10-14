@@ -3,8 +3,8 @@
 import styles from "./SearchInput.module.scss";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useDispatch } from "react-redux";
 import { Search } from "@/types/Search";
+import { useAppDispatch } from "@/store/hooks";
 
 export const SearchInput = ({
   queryValue,
@@ -17,7 +17,7 @@ export const SearchInput = ({
   const [isAdding, setIsAdding] = useState(true);
   const [isTyping, setIsTyping] = useState(true);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const searchParams = useSearchParams();
 

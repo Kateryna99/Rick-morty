@@ -1,6 +1,5 @@
 "use client";
 
-import { useDispatch } from "react-redux";
 import { usePagination } from "@/components/pagination/hooks/usePagination";
 import { useEffect, useMemo } from "react";
 
@@ -22,13 +21,13 @@ import {
 import { SearchQueries } from "@/enums/SearchQueries";
 import { setNameQuery } from "@/features/episodeSlice";
 import { getFilteredList } from "@/helpers/getFilteredList";
-import {useAppSelector} from "@/store/useAppSelector";
+import {useAppDispatch, useAppSelector} from "@/store/hooks";
 
 export const EpisodesCatalog = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { episodesList, episodeCodeQuery, loading, error, nameQuery } =
-      useAppSelector((state) => state.episodes);
+    useAppSelector((state) => state.episodes);
   const filteredListByName = useMemo(() => {
     return getFilteredList(episodesList, "name", nameQuery);
   }, [nameQuery, episodesList]);

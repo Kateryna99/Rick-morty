@@ -1,6 +1,5 @@
 "use client";
 
-import { useDispatch } from "react-redux";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { fetchCharacterById, setCharacter } from "@/features/characterSlice";
@@ -9,10 +8,10 @@ import { CharacterSceleton } from "@/sceletons/CharacterSceleton";
 import styles from "./CharacterDetails.module.scss";
 import classNames from "classnames";
 import Link from "next/link";
-import { useAppSelector } from "@/store/useAppSelector";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 const CharacterPage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
   const selectedId = searchParams.get("selectedId");
   const router = useRouter();
@@ -56,10 +55,12 @@ const CharacterPage = () => {
   };
 
   useEffect(() => {
-    if (selectedId) {
-      dispatch(fetchCharacterById(selectedId));
+    const selectedCharacterId = getSelectedCharacterId();
+
+    if (selectedCharacterId) {
+      dispatch(fetchCharacterById(selectedCharacterId));
     }
-  }, [selectedId, dispatch]);
+  }, [selectedId]);
 
   return (
     <>

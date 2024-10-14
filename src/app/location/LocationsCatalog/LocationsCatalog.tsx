@@ -11,12 +11,12 @@ import { CharactersList } from "@/app/character/CharactersList/CharactersList";
 import { BaseCatalogContent } from "@/components/BaseCatalogPage/BaseCatalogContent";
 import { fetchLocationsData } from "@/features/locationSlice";
 import { Location } from "@/types/Location";
-import {useAppSelector} from "@/store/useAppSelector";
+import {hooks} from "@/store/hooks";
 
 export const LocationsCatalog = () => {
   const dispatch = useDispatch();
 
-  const { locationsList, loading, error } = useAppSelector(
+  const { locationsList, loading, error } = hooks(
     (state) => state.locations,
   );
   const {

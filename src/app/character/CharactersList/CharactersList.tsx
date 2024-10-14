@@ -4,7 +4,7 @@ import { Character } from "@/types/Character";
 import styles from "../../styles/DataList.module.scss";
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
-import {useAppSelector} from "@/store/useAppSelector";
+import { useAppSelector } from "@/store/hooks";
 
 interface Props {
   currentData: Character[];

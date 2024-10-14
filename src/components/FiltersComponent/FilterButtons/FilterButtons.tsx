@@ -1,10 +1,10 @@
 "use client";
 
 import styles from "./FilterButtons.module.scss";
-import { FC} from "react";
-import { useDispatch } from "react-redux";
+import { FC } from "react";
 import { setDataFilter, setFilters } from "@/features/filterSlice";
 import classNames from "classnames";
+import { useAppDispatch } from "@/store/hooks";
 
 interface Props {
   key?: number;
@@ -19,7 +19,7 @@ export const FilterButtons: FC<Props> = ({
   selectedOption,
   keyValue,
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleClick = (option: string) => {
     dispatch(setDataFilter({ key: `${keyValue}`, payload: option }));

@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Character } from "@/types/Character";
 import { RootApiLink } from "@/constants/RootApiLink";
@@ -25,7 +27,7 @@ const initialState: CharactersSliceState = {
 };
 
 export const fetchCharactersData = createAsyncThunk<Character[]>(
-  "CharacterSlice/fetchPageData",
+  "characters/fetchPageData",
   async () => {
     let allCharacters = [];
 
@@ -49,13 +51,11 @@ export const fetchCharactersData = createAsyncThunk<Character[]>(
 );
 
 export const fetchCharacterById = createAsyncThunk<Character, number>(
-  "CharacterSlice/fetchCharacterById",
+  "characters/fetchCharacterById",
   async (characterId: number) => {
     const res = await fetch(`${RootApiLink}/character/${characterId}`);
 
     const data = await res.json();
-
-    //await getPause(Pause.loading);
 
     return data;
   },
@@ -68,9 +68,9 @@ export const CharacterSlice = createSlice({
     setNameQuery: (state, action) => {
       state.nameQuery = action.payload;
     },
-     setCharacter: (state, action) => {
-        state.character = action.payload;
-     }
+    setCharacter: (state, action) => {
+      state.character = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder

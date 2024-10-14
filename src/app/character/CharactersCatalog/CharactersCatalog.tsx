@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useDispatch } from "react-redux";
 import { usePagination } from "@/components/pagination/hooks/usePagination";
@@ -29,10 +29,10 @@ import CharacterDetails from "@/app/character/CharacterDetails/CharacterDetails"
 import styles from "./CharactersCatalog.module.scss";
 import { PLACEHOLDER_CHARACTERS_WORDS } from "@/constants/PlaceholderWords";
 import { Search } from "@/types/Search";
-import {useAppSelector} from "@/store/useAppSelector";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 export const CharactersCatalog = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { charactersList, loading, error, nameQuery } = useAppSelector(
     (state) => state.characters,
