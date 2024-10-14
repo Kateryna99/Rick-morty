@@ -75,7 +75,7 @@ export const EpisodesCatalog = () => {
           <FiltersComponent searchList={episodesSearch} />
           {!!displayedEpisodes.length && (
             <>
-              <CharactersList currentData={currentData as Episode[]} />
+              {/*<CharactersList currentData={currentData as Episode[]} />*/}
               <Pagination
                 totalPages={totalPages}
                 currentPage={currentPage}

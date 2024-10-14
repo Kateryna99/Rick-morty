@@ -11,12 +11,12 @@ import { CharactersList } from "@/app/character/CharactersList/CharactersList";
 import { BaseCatalogContent } from "@/components/BaseCatalogPage/BaseCatalogContent";
 import { fetchLocationsData } from "@/features/locationSlice";
 import { Location } from "@/types/Location";
-import {hooks} from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 export const LocationsCatalog = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const { locationsList, loading, error } = hooks(
+  const { locationsList, loading, error } = useAppSelector(
     (state) => state.locations,
   );
   const {
@@ -38,7 +38,7 @@ export const LocationsCatalog = () => {
       {error && <div>Error</div>}
       {!!locationsList.length && !loading && (
         <BaseCatalogContent>
-          <CharactersList currentData={currentData as Location[]} />
+          {/*<CharactersList currentData={currentData as Location[]} />*/}
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}

@@ -21,7 +21,7 @@ const initialState: PageSliceState = {
   error: false,
 };
 
-export const fetchLocationsData = createAsyncThunk<Location[], string>(
+export const fetchLocationsData = createAsyncThunk<Location[]>(
   "LocationsSlice/fetchLocationsData",
   async () => {
     const response = await fetch(`${RootApiLink}/location`);
