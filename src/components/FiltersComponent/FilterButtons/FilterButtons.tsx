@@ -10,7 +10,7 @@ interface Props {
   key?: number;
   filters: string[];
   selectedOption: string;
-  kayValue: string;
+  keyValue: string;
   placeholder: string;
 }
 
