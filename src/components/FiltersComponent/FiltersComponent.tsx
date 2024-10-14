@@ -3,7 +3,6 @@ import { FC } from "react";
 import styles from "./FiltersComponent.module.scss";
 import { SearchInput } from "@/components/FiltersComponent/SearchInput/SearchInput";
 import { FilterButtons } from "@/components/FiltersComponent/FilterButtons/FilterButtons";
-import { Filter } from "@/types/Filter";
 import { Search } from "@/types/Search";
 
 interface Props {

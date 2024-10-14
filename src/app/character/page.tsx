@@ -1,9 +1,7 @@
-import {CharactersCatalog} from "@/app/character/CharactersCatalog/CharactersCatalog";
+import { CharactersCatalog } from "@/app/character/CharactersCatalog/CharactersCatalog";
 
 const CharactersPage = () => {
-    return (
-        <CharactersCatalog/>
-    )
-}
+  return <CharactersCatalog />;
+};
 
 export default CharactersPage;

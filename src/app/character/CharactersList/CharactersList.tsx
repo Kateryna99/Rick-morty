@@ -3,8 +3,8 @@ import { Character } from "@/types/Character";
 
 import styles from "../../styles/DataList.module.scss";
 import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
 import classNames from "classnames";
+import {useAppSelector} from "@/store/useAppSelector";
 
 interface Props {
   currentData: Character[];
@@ -12,7 +12,7 @@ interface Props {
 
 export const CharactersList: FC<Props> = ({ currentData }) => {
   const router = useRouter();
-  const { character } = useSelector((state) => state.characters);
+  const { character } = useAppSelector((state) => state.characters);
 
   const handleCharacterClick = (id: number) => {
     router.push(`/character?selectedId=${id}`);
