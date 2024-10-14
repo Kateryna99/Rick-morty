@@ -9,7 +9,7 @@ import { CharacterSceleton } from "@/sceletons/CharacterSceleton";
 import styles from "./CharacterDetails.module.scss";
 import classNames from "classnames";
 import Link from "next/link";
-import {useAppSelector} from "@/store/useAppSelector";
+import { useAppSelector } from "@/store/useAppSelector";
 
 const CharacterPage = () => {
   const dispatch = useDispatch();
@@ -20,23 +20,29 @@ const CharacterPage = () => {
     (state) => state.characters,
   );
 
-  const handlePrevCharacter = () => {
-    const nextId = parseInt(selectedId, 10);
+  const getSelectedCharacterId = () => {
+    if (selectedId != null) {
+      const id = parseInt(selectedId, 10);
 
-    if (!isNaN(nextId)) {
-      if (!isNaN(nextId)) {
-        router.push(`?selectedId=${nextId - 1}`);
-      }
+      return !isNaN(id) ? id : null;
+    }
+
+    return null;
+  };
+
+  const handlePrevCharacter = () => {
+    const selectedCharacterId = getSelectedCharacterId();
+
+    if (selectedCharacterId !== null) {
+      router.push(`?selectedId=${selectedCharacterId - 1}`);
     }
   };
 
   const handleNextCharacter = () => {
-    const nextId = parseInt(selectedId, 10);
+    const selectedCharacterId = getSelectedCharacterId();
 
-    if (!isNaN(nextId)) {
-      if (!isNaN(nextId)) {
-        router.push(`?selectedId=${nextId + 1}`);
-      }
+    if (selectedCharacterId !== null) {
+      router.push(`?selectedId=${selectedCharacterId + 1}`);
     }
   };
 
