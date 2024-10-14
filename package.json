@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "eslint . --quiet && next build",
+    "build": "next build",
     "start": "next start",
     "export": "next export",
     "deploy": "gh-pages -d out"

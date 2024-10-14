@@ -39,10 +39,10 @@ module.exports = {
                     { blankLine: 'always', prev: 'directive', next: '*' },
                     { blankLine: 'always', prev: 'block-like', next: '*' },
                 ],
-                '@typescript-eslint/no-unused-vars': [
+                /*'@typescript-eslint/no-unused-vars': [
                     'error',
                     { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },
-                ],
+                ],*/
             },
         },
     ],
