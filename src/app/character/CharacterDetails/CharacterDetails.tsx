@@ -74,7 +74,7 @@ const CharacterPage = () => {
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(-90deg)" }}
                 onClick={handlePrevCharacter}
-                disabled={selectedId == 1}
+                disabled={getSelectedCharacterId() == 1}
               />
 
               <div className={styles.characterImage}>
@@ -85,7 +85,7 @@ const CharacterPage = () => {
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(90deg)" }}
                 onClick={handleNextCharacter}
-                disabled={selectedId == charactersList.length}
+                disabled={getSelectedCharacterId()  == charactersList.length}
               />
             </div>
 
