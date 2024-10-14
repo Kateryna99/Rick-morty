@@ -6,5 +6,5 @@ interface Props {
 }
 
 export const EpisodesList: FC<Props> = ({ episodes }) => {
-  return <p>{episodes.name}</p>;
+  return <p>EpisodesList</p>;
 };
