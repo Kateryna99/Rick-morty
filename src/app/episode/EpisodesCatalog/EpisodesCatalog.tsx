@@ -5,7 +5,6 @@ import { useEffect, useMemo } from "react";
 
 import { LoadingPage } from "@/components/loadingPage/LoadingPage";
 import { Pagination } from "@/components/pagination/Pagination";
-import { CharactersList } from "@/app/character/CharactersList/CharactersList";
 
 import { BaseCatalogContent } from "@/components/BaseCatalogPage/BaseCatalogContent";
 import {
@@ -22,6 +21,11 @@ import { SearchQueries } from "@/enums/SearchQueries";
 import { setNameQuery } from "@/features/episodeSlice";
 import { getFilteredList } from "@/helpers/getFilteredList";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { EpisodesList } from '@/app/episode/EpisodesList/EpisodesList';
+import { Episode } from '@/types/Episode';
+
+import styles from '@/styles/DataCatalog.module.scss';
+import {Search} from '@/types/Search';
 
 export const EpisodesCatalog = () => {
   const dispatch = useAppDispatch();
@@ -45,20 +49,22 @@ export const EpisodesCatalog = () => {
     handleNextPage,
   } = usePagination(displayedEpisodes, 8);
 
-  const episodesSearch = [
+  const episodesSearch: Search[] = [
     {
       id: 1,
       queryValue: nameQuery,
       wordsList: PLACEHOLDER_EPISODES_NAME_WORDS,
       queryType: SearchQueries.name,
-      setQuery: setNameQuery,
+      setQuery: (value) => dispatch(setNameQuery(value)),
+      title: "Episode Name",
     },
     {
       id: 2,
       queryValue: episodeCodeQuery,
       wordsList: PLACEHOLDER_EPISODES_CODE_WORDS,
       queryType: SearchQueries.code,
-      setQuery: setEpisodeCodeQuery,
+      setQuery: (value) => dispatch(setEpisodeCodeQuery(value)),
+      title: "Episode Code",
     },
   ];
 
@@ -72,10 +78,9 @@ export const EpisodesCatalog = () => {
       {error && <div>Error</div>}
       {!loading && (
         <BaseCatalogContent flex>
-          <FiltersComponent searchList={episodesSearch} />
           {!!displayedEpisodes.length && (
-            <>
-              {/*<CharactersList currentData={currentData as Episode[]} />*/}
+            <div className={styles.catalogContent}>
+              <EpisodesList episodes={currentData as Episode[]} />
               <Pagination
                 totalPages={totalPages}
                 currentPage={currentPage}
@@ -83,8 +88,11 @@ export const EpisodesCatalog = () => {
                 handlePrevPage={handlePrevPage}
                 handleNextPage={handleNextPage}
               />
-            </>
+            </div>
           )}
+          {!displayedEpisodes.length && <p>No episodes found</p>}
+          <FiltersComponent searchList={episodesSearch} />
+
         </BaseCatalogContent>
       )}
     </>

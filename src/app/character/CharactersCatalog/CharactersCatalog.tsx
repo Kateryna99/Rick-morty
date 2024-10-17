@@ -25,10 +25,11 @@ import {
 import { Filter } from "@/types/Filter";
 import CharacterDetails from "@/app/character/CharacterDetails/CharacterDetails";
 
-import styles from "./CharactersCatalog.module.scss";
+import styles from "@/styles/DataCatalog.module.scss";
 import { PLACEHOLDER_CHARACTERS_WORDS } from "@/constants/PlaceholderWords";
 import { Search } from "@/types/Search";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import {ItemsPerPage} from '@/enums/Pagination';
 
 export const CharactersCatalog = () => {
   const dispatch = useAppDispatch();
@@ -62,7 +63,7 @@ export const CharactersCatalog = () => {
     totalPages,
     handlePrevPage,
     handleNextPage,
-  } = usePagination(displayedCharacters, 6);
+  } = usePagination(displayedCharacters, ItemsPerPage.six);
 
   const charactersFilters: Filter[] = [
     {
@@ -95,6 +96,7 @@ export const CharactersCatalog = () => {
       wordsList: PLACEHOLDER_CHARACTERS_WORDS,
       queryType: SearchQueries.name,
       setQuery: (value) => dispatch(setNameQuery(value)),
+      title: 'Character Name',
     },
   ];
 
@@ -108,9 +110,9 @@ export const CharactersCatalog = () => {
       {error && <div>Error</div>}
       {!loading && (
         <BaseCatalogContent>
-          <CharacterDetails />
+          <CharacterDetails itemsPerPage={ItemsPerPage.six} />
           {!!displayedCharacters.length && (
-            <div className={styles.charactersContent}>
+            <div className={styles.catalogContent}>
               <CharactersList currentData={currentData as Character[]} />
               <Pagination
                 totalPages={totalPages}

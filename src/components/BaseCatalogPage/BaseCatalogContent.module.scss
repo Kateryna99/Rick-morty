@@ -14,8 +14,6 @@
   gap: 30px;
 
   &.flex {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: 0.8fr 0.2fr;
   }
 }

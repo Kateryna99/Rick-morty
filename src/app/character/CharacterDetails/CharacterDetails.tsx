@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { FC, useEffect } from 'react';
 import { fetchCharacterById, setCharacter } from "@/features/characterSlice";
 import { CharacterSceleton } from "@/sceletons/CharacterSceleton";
 
@@ -10,39 +10,32 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
-const CharacterPage = () => {
+interface Props {
+  itemsPerPage: number;
+}
+
+const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
   const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
-  const selectedId = searchParams.get("selectedId");
+  const newParams = new URLSearchParams(searchParams);
+  const idParam = searchParams.get("selectedId");
   const router = useRouter();
   const { character, charactersList } = useAppSelector(
     (state) => state.characters,
   );
 
-  const getSelectedCharacterId = () => {
-    if (selectedId !== null) {
-      const id = parseInt(selectedId, 10);
+  const selectedId = idParam ? parseInt(idParam) : null;
+  const getCurrentPageFromHero = (id) => Math.floor((id - 1) / itemsPerPage) + 1;
 
-      return !isNaN(id) ? id : null;
-    }
+  const handleButtonClick = (id) => {
 
-    return null;
-  };
+    newParams.set('selectedId', id.toString());
 
-  const handlePrevCharacter = () => {
-    const selectedCharacterId = getSelectedCharacterId();
+    const currPage = getCurrentPageFromHero(id)
 
-    if (selectedCharacterId !== null) {
-      router.push(`?selectedId=${selectedCharacterId - 1}`);
-    }
-  };
+    newParams.set('page', currPage.toString());
 
-  const handleNextCharacter = () => {
-    const selectedCharacterId = getSelectedCharacterId();
-
-    if (selectedCharacterId !== null) {
-      router.push(`?selectedId=${selectedCharacterId + 1}`);
-    }
+    router.push(`?${newParams.toString()}`);
   };
 
   const handleReset = () => {
@@ -55,10 +48,9 @@ const CharacterPage = () => {
   };
 
   useEffect(() => {
-    const selectedCharacterId = getSelectedCharacterId();
 
-    if (selectedCharacterId) {
-      dispatch(fetchCharacterById(selectedCharacterId));
+    if (selectedId) {
+      dispatch(fetchCharacterById(selectedId));
     }
   }, [selectedId]);
 
@@ -73,8 +65,8 @@ const CharacterPage = () => {
               <button
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(-90deg)" }}
-                onClick={handlePrevCharacter}
-                disabled={getSelectedCharacterId() === 1}
+                onClick={() => handleButtonClick(selectedId - 1)}
+                disabled={selectedId === 1}
               />
 
               <div className={styles.characterImage}>
@@ -84,8 +76,8 @@ const CharacterPage = () => {
               <button
                 className={classNames(styles.button, "icon-chevron-up")}
                 style={{ transform: "rotate(90deg)" }}
-                onClick={handleNextCharacter}
-                disabled={getSelectedCharacterId() === charactersList.length}
+                onClick={() => handleButtonClick(selectedId + 1)}
+                disabled={selectedId === charactersList.length}
               />
             </div>
 

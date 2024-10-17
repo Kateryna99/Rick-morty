@@ -6,4 +6,5 @@ export interface Search {
   wordsList: string[];
   queryType: SearchQueries;
   setQuery: (queryValue: string) => void;
+  title: string;
 }

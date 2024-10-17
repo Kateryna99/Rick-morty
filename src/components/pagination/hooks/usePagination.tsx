@@ -1,52 +1,56 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-export const usePagination = <T, >(data: T[], itemsPerPage) => {
+export const usePagination = <T, >(data: T[], itemsPerPage?: number) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState<>([]);
+  const [totalPages, setTotalPages] = useState<number[]>([]);
   const [currentData, setCurrentData] = useState<T[]>([]);
 
-  const updateUrl = (page: number) => {
+  const updateUrl = useCallback((page: number) => {
     const newParams = new URLSearchParams(searchParams);
 
     newParams.set('page', page.toString());
+
+    const selectedId = searchParams.get('selectedId');
+
+    if (selectedId) {
+      newParams.set('selectedId', selectedId);
+    }
+
     router.push(`?${newParams.toString()}`);
-  };
+  }, [currentPage, router])
 
   const handleNextPage = () => {
-    if (currentPage < totalPages.length) {
-      const nextPage = currentPage + 1;
+    const nextPage = currentPage + 1;
 
-      setCurrentPage(nextPage);
-      updateUrl(nextPage);
-    }
+    setCurrentPage(nextPage);
+    updateUrl(nextPage);
   };
 
   const handlePrevPage = () => {
-    if (currentPage > 1) {
-      const prevPage = currentPage - 1;
+    const prevPage = currentPage - 1;
 
-      setCurrentPage(prevPage);
-      updateUrl(prevPage);
+    setCurrentPage(prevPage);
+    updateUrl(prevPage);
+  };
+
+  const handlePageNumberClick = (pageNumber: number) => {
+    if (pageNumber !== currentPage) {
+      setCurrentPage(pageNumber);
+      updateUrl(pageNumber);
     }
   };
 
-  const handlePageNumberClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    updateUrl(pageNumber);
-  }
-
   useEffect(() => {
-    const totalPagesCount = Math.ceil(data?.length / itemsPerPage);
-    const pagesArray = Array.from({ length: totalPagesCount }, (_, i) => i + 1);
+    const totalPagesCount = Math.ceil(data.length / itemsPerPage);
 
-    setTotalPages(pagesArray);
-  }, [data]);
+    setTotalPages(Array.from({ length: totalPagesCount }, (_, i) => i + 1));
+  }, [data, itemsPerPage]);
 
   useEffect(() => {
     const newCurrentData = data.slice(
@@ -69,6 +73,6 @@ export const usePagination = <T, >(data: T[], itemsPerPage) => {
     currentData,
     handleNextPage,
     handlePrevPage,
-    handlePageNumberClick
-  }
-}
+    handlePageNumberClick,
+  };
+};

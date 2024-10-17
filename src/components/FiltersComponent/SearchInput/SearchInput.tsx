@@ -11,6 +11,7 @@ export const SearchInput = ({
   wordsList,
   queryType,
   setQuery,
+  title
 }: Search) => {
   const [placeholder, setPlaceholder] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -34,7 +35,7 @@ export const SearchInput = ({
       newSearchParams.delete(queryType);
     }
 
-    router.push(`?${newSearchParams.toString()}` /*{ shallow: true }*/);
+    router.push(`?${newSearchParams.toString()}` ,{ shallow: true });
   };
 
   useEffect(() => {
@@ -87,16 +88,19 @@ export const SearchInput = ({
   };
 
   return (
-    <label className={styles.label}>
-      <input
-        className={styles.input}
-        type="text"
-        placeholder={!isTyping ? "" : placeholder}
-        value={queryValue}
-        onChange={handleFilterChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-      />
-    </label>
+    <div className={styles.searchInput}>
+      <h5 className={styles.title}>{title}</h5>
+      <label className={styles.label}>
+        <input
+          className={styles.input}
+          type="text"
+          placeholder={!isTyping ? "" : placeholder}
+          value={queryValue}
+          onChange={handleFilterChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+      </label>
+    </div>
   );
 };

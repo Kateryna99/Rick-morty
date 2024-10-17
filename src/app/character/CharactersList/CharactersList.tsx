@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Character } from "@/types/Character";
 
-import styles from "../../styles/DataList.module.scss";
-import { useRouter } from "next/navigation";
+import styles from "@/styles/DataList.module.scss";
+import { useRouter, useSearchParams } from 'next/navigation';
 import classNames from "classnames";
 import { useAppSelector } from "@/store/hooks";
 import Image from 'next/image';
@@ -13,10 +13,18 @@ interface Props {
 
 export const CharactersList: FC<Props> = ({ currentData }) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { character } = useAppSelector((state) => state.characters);
 
   const handleCharacterClick = (id: number) => {
-    router.push(`/character?selectedId=${id}`);
+    const newParams = new URLSearchParams(searchParams);
+
+    newParams.set('selectedId', id.toString());
+    const currentPageFromHero = Math.floor((id - 1) / 6) + 1;
+
+    newParams.set('page', currentPageFromHero.toString());
+
+    router.push(`?${newParams.toString()}`);
   };
 
   return (
@@ -30,7 +38,7 @@ export const CharactersList: FC<Props> = ({ currentData }) => {
           onClick={() => handleCharacterClick(item.id)}
         >
           <div className={styles.dataImage}>
-            <Image src={item.image} alt={item.name} fill />
+            <img src={item.image} alt={item.name}/>
           </div>
 
           <p className={styles.name}>{item.name}</p>
