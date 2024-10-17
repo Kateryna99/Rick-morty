@@ -7,11 +7,11 @@ import { Search } from "@/types/Search";
 import { Filter } from "@/types/Filter";
 
 interface Props {
-  dropDownList?: Filter[];
+    filterList?: Filter[];
   searchList: Search[];
 }
 
-export const FiltersComponent: FC<Props> = ({ dropDownList, searchList }) => {
+export const FiltersComponent: FC<Props> = ({ filterList, searchList }) => {
   return (
     <div className={styles.filter}>
       <div className={styles.filterWrapper}>
@@ -21,9 +21,9 @@ export const FiltersComponent: FC<Props> = ({ dropDownList, searchList }) => {
           })}
         </div>
 
-        {!!dropDownList?.length && (
+        {!!filterList?.length && (
           <div className={styles.filterDropdowns}>
-            {dropDownList.map((filter) => (
+            {filterList.map((filter) => (
               <FilterButtons key={filter.id} {...filter} />
             ))}
           </div>

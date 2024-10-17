@@ -5,6 +5,7 @@ import styles from "../../styles/DataList.module.scss";
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
 import { useAppSelector } from "@/store/hooks";
+import Image from 'next/image';
 
 interface Props {
   currentData: Character[];
@@ -29,7 +30,7 @@ export const CharactersList: FC<Props> = ({ currentData }) => {
           onClick={() => handleCharacterClick(item.id)}
         >
           <div className={styles.dataImage}>
-            <img src={item.image} alt={item.name} />
+            <Image src={item.image} alt={item.name} fill />
           </div>
 
           <p className={styles.name}>{item.name}</p>

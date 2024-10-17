@@ -70,21 +70,21 @@ export const CharactersCatalog = () => {
       filters: STATUS_QUERIES,
       selectedOption: statusFilter,
       keyValue: "statusFilter",
-      placeholder: "Select a Status",
+      title: "Status",
     },
     {
       id: 2,
       filters: SPECIES_QUERIES,
       selectedOption: speciesFilter,
       keyValue: "speciesFilter",
-      placeholder: "Select Species",
+      title: "Species",
     },
     {
       id: 3,
       filters: GENDER_QUERIES,
       selectedOption: genderFilter,
       keyValue: "genderFilter",
-      placeholder: "Select a Gender",
+      title: "Gender",
     },
   ];
 
@@ -123,7 +123,7 @@ export const CharactersCatalog = () => {
           )}
           {!displayedCharacters.length && <p>No characters found</p>}
           <FiltersComponent
-            dropDownList={charactersFilters}
+            filterList={charactersFilters}
             searchList={charactersSearch}
           />
         </BaseCatalogContent>

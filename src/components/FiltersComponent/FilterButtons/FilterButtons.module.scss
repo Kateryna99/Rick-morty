@@ -1,6 +1,18 @@
+.filterButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .filterOptions {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 

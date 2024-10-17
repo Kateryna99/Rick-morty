@@ -3,5 +3,5 @@ export interface Filter {
   filters: string[];
   selectedOption: string;
   keyValue: string;
-  placeholder: string;
+  title: string;
 }

@@ -16,7 +16,6 @@ module.exports = {
             },
             rules: {
                 "no-console": "error", // Попередження при використанні console
-                "no-unused-vars": "off", // Вимкнення правила для невикористанних змінних
                 "eqeqeq": "error", // Помилка при використанні не строгого рівності
                 'no-unused-expressions': 'off',
                 "curly": "error", // Помилка при відсутності фігурних дужок
@@ -40,10 +39,8 @@ module.exports = {
                     { blankLine: 'always', prev: 'directive', next: '*' },
                     { blankLine: 'always', prev: 'block-like', next: '*' },
                 ],
-                "@typescript-eslint/no-unused-vars": "off",
-                "@next/next/no-img-element": "off",
 
-                /*'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },],*/
+                '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_+$', varsIgnorePattern: '^_+$' },],
             },
         },
     ],
