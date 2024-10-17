@@ -25,7 +25,8 @@ import { EpisodesList } from '@/app/episode/EpisodesList/EpisodesList';
 import { Episode } from '@/types/Episode';
 
 import styles from '@/styles/DataCatalog.module.scss';
-import {Search} from '@/types/Search';
+import { Search } from '@/types/Search';
+import { ItemsPerPage } from '@/enums/Pagination';
 
 export const EpisodesCatalog = () => {
   const dispatch = useAppDispatch();
@@ -47,7 +48,7 @@ export const EpisodesCatalog = () => {
     totalPages,
     handlePrevPage,
     handleNextPage,
-  } = usePagination(displayedEpisodes, 8);
+  } = usePagination(displayedEpisodes, ItemsPerPage.eight);
 
   const episodesSearch: Search[] = [
     {

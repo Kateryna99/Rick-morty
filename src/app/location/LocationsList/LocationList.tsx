@@ -14,10 +14,12 @@ export const LocationsList: FC<Props> = ({ locations }) => {
       {locations.map((item) => (
         <div
           key={item.id}
-          className={styles.dataCard}
+          className={classNames(styles.dataCard, styles.noAction)}
         >
 
-          <div className={styles.header}>{item.type}</div>
+          <div className={styles.header}>
+            <img src={item.image} alt=""/>
+          </div>
 
           <p className={styles.name}>{item.name}</p>
         </div>

@@ -39,12 +39,9 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
   };
 
   const handleReset = () => {
-    dispatch(setCharacter({}));
+    const randomId = Math.floor(Math.random() * charactersList.length) + 1;
 
-    const params = new URLSearchParams(window.location.search);
-
-    params.delete("selectedId");
-    router.push(`?${params.toString()}`);
+    dispatch(fetchCharacterById(randomId));
   };
 
   useEffect(() => {
@@ -121,8 +118,8 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
               </div>
             </div>
 
-            <button className={styles.reset} onClick={handleReset}>
-              Reset
+            <button className={styles.random} onClick={handleReset}>
+              Random Character
             </button>
           </div>
         </div>

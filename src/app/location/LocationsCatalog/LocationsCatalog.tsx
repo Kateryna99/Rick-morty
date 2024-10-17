@@ -1,7 +1,7 @@
 "use client";
 
 import { usePagination } from "@/components/pagination/hooks/usePagination";
-import { useEffect } from "react";
+import { useEffect, useMemo } from 'react';
 
 import { LoadingPage } from "@/components/loadingPage/LoadingPage";
 import { Pagination } from "@/components/pagination/Pagination";
@@ -18,14 +18,33 @@ import { PLACEHOLDER_LOCATIONS_NAME_WORDS, PLACEHOLDER_LOCATIONS_TYPE_WORDS }
   from '@/constants/PlaceholderWords';
 import { SearchQueries } from '@/enums/SearchQueries';
 import { Search } from '@/types/Search';
+import { ItemsPerPage } from '@/enums/Pagination';
+import { getFilteredList } from '@/helpers/getFilteredList';
 
 
 export const LocationsCatalog = () => {
   const dispatch = useAppDispatch();
-
   const { locationsList, loading, error, nameQuery, typeQuery } = useAppSelector(
     (state) => state.locations,
   );
+
+  const updatedList = useMemo(() => {
+    return locationsList.map(location => {
+      return {
+        ...location,
+        image: `/locations/${location.name}.jpg`
+      }
+    });
+  },[locationsList]);
+
+  const filteredListByName = useMemo(() => {
+    return getFilteredList(updatedList, "name", nameQuery);
+  }, [nameQuery, updatedList]);
+
+  const displayedLocations = useMemo(() => {
+    return getFilteredList(filteredListByName, "type", typeQuery);
+  }, [typeQuery, filteredListByName]);
+
   const {
     handlePageNumberClick,
     currentData,
@@ -33,7 +52,7 @@ export const LocationsCatalog = () => {
     totalPages,
     handlePrevPage,
     handleNextPage,
-  } = usePagination(locationsList, 8);
+  } = usePagination(displayedLocations, ItemsPerPage.eight);
 
   const locationsSearch:Search[] = [
     {

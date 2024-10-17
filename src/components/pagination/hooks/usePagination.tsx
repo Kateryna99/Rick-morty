@@ -23,7 +23,7 @@ export const usePagination = <T, >(data: T[], itemsPerPage?: number) => {
     }
 
     router.push(`?${newParams.toString()}`);
-  }, [currentPage, router])
+  }, [currentPage, router, searchParams])
 
   const handleNextPage = () => {
     const nextPage = currentPage + 1;

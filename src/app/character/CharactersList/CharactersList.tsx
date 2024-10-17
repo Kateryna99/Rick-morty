@@ -47,3 +47,6 @@ export const CharactersList: FC<Props> = ({ currentData }) => {
     </div>
   );
 };
+
+//height: 80vh;
+//   max-height: 400px;

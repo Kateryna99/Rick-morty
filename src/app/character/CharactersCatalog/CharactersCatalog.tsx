@@ -29,7 +29,7 @@ import styles from "@/styles/DataCatalog.module.scss";
 import { PLACEHOLDER_CHARACTERS_WORDS } from "@/constants/PlaceholderWords";
 import { Search } from "@/types/Search";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import {ItemsPerPage} from '@/enums/Pagination';
+import { ItemsPerPage } from '@/enums/Pagination';
 
 export const CharactersCatalog = () => {
   const dispatch = useAppDispatch();

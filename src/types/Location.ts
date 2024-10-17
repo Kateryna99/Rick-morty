@@ -6,4 +6,5 @@ export interface Location {
     residents: string[];
     url: string;
     created: string;
+    image: string;
 }

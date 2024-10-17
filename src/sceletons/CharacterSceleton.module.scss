@@ -1,48 +1,69 @@
-.skeleton {
-  height: 80vh;
-  max-height: 524px;
-
-  background: #f0f0f0;
-  border-radius: 4px;
-  padding: 16px;
-  animation: pulse 1.5s infinite;
-}
 
 .message {
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: #fff;
   margin-bottom: 12px;
+
+  text-align: center;
+}
+
+// styles/CharacterSkeleton.module.scss
+
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1b1b1b; // Темна фоновка для контрасту
+  border: 2px solid #66FF00;  // Додано синю рамку
+  border-radius: 10px;
+  padding: 20px;
+  height: 80vh;
+  max-height: 400px; // Висота картки персонажа
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skeletonImage {
   width: 100%;
-  height: 150px;
-  background: #e0e0e0;
+  height: 200px;
+  background-color: #2d2d2d; // Placeholder кольору
+  border-radius: 8px;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite ease-in-out; // Анімація
+  border: 2px solid #66FF00;  // Синя рамка навколо зображення
+}
+
+.skeletonText {
+  width: 80%;
+  height: 20px;
+  background-color: #2d2d2d; // Placeholder для тексту
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
-.skeletonBody {
-  display: flex;
-  flex-direction: column;
+.skeletonText:last-child {
+  width: 60%;  // Вужчий блок для додання різноманітності
 }
 
-.skeletonLine {
-  height: 16px;
-  background: #e0e0e0;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  width: 100%;
+// Додатковий синій відтінок для текстових блоків
+.skeletonText::before {
+  content: '';
+  display: block;
+  height: 100%;
+  background-color: #66FF00;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
+// Анімація для пульсування
 @keyframes pulse {
   0% {
-    background-color: #e0e0e0;
+    opacity: 1;
   }
   50% {
-    background-color: #d0d0d0;
+    opacity: 0.5;
   }
   100% {
-    background-color: #e0e0e0;
+    opacity: 1;
   }
 }
+

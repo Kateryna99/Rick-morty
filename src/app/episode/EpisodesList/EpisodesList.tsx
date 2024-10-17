@@ -14,7 +14,7 @@ export const EpisodesList: FC<Props> = ({ episodes }) => {
       {episodes.map((item) => (
         <div
           key={item.id}
-          className={styles.dataCard}
+          className={classNames(styles.dataCard, styles.noAction)}
         >
 
           <div className={styles.header}>{item.id}</div>

@@ -1,10 +1,12 @@
 "use client";
 
 import styles from "./SearchInput.module.scss";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search } from "@/types/Search";
 import { useAppDispatch } from "@/store/hooks";
+import { debounce } from "lodash";
+import { Pause } from '@/enums/Pause';
 
 export const SearchInput = ({
   queryValue,
@@ -22,10 +24,15 @@ export const SearchInput = ({
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  const debounceHandleChange = useCallback(
+    debounce((value: string) => {
+      setQuery(value);
+
+    }, Pause.debounce), [queryType]
+  );
+
   const handleFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-
-    setQuery(value);
 
     const newSearchParams = new URLSearchParams(searchParams.toString());
 
@@ -35,7 +42,9 @@ export const SearchInput = ({
       newSearchParams.delete(queryType);
     }
 
-    router.push(`?${newSearchParams.toString()}` ,{ shallow: true });
+    router.push(`?${newSearchParams.toString()}`, { shallow: true });
+
+    debounceHandleChange(value);
   };
 
   useEffect(() => {
