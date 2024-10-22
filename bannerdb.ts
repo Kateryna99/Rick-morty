@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const sql = require('better-sqlite3');
 
-import { isProcessProduction } from "@/helpers/isProcessProduction";
-
 const db = new sql('banner.db');
 
 db.prepare(`

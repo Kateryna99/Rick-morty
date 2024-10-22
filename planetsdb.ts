@@ -1,10 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const sql = require('better-sqlite3');
 
-import { isProcessProduction } from "@/helpers/isProcessProduction";
-
-
-
 const db = new sql('planets.db');
 
 db.prepare(`
@@ -20,33 +16,32 @@ const planetsList = [
   {
     title: 'Snake Planet',
     temperature: '70℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/snake_planet.jpg'
-      : '/planets/snake_planet.jpg',
+    image: '/planets/snake_planet.jpg',
   },
   {
     title: 'Gazorpazorp Planet',
     temperature: '360℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/gazo.jpg' : '/planets/gazo.jpg',
+    image: '/planets/gazo.jpg',
   },
   {
     title: 'Kepler Planet',
     temperature: '10℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/kepler.jpg' : '/planets/kepler.jpg',
+    image: '/planets/kepler.jpg',
   },
   {
     title: 'Burma Planet',
     temperature: '40℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/burma.jpg' : '/planets/burma.jpg',
+    image: '/planets/burma.jpg',
   },
   {
     title: 'Gramuflack Planet',
     temperature: '-40℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/gramuflack.jpg' : '/planets/gramuflack.jpg',
+    image: '/planets/gramuflack.jpg',
   },
   {
     title: 'Sexy Planet',
     temperature: '300℉',
-    image: isProcessProduction ? '/Rick-Morty/planets/sexy.jpg' : '/planets/sexy.jpg',
+    image: '/planets/sexy.jpg',
   },
 ];
 
