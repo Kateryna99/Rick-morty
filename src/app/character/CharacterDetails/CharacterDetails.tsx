@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { FC, useEffect, Suspense } from 'react';
+import { FC, useEffect } from 'react';
 import { fetchCharacterById } from "@/features/characterSlice";
 import { CharacterSceleton } from "@/sceletons/CharacterSceleton";
 
@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 interface Props {
-  itemsPerPage: number;
+    itemsPerPage: number;
 }
 
 const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
@@ -51,10 +51,10 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
     }
   }, [selectedId]);
 
-  return  (
-    <Suspense fallback={<CharacterSceleton />}>
+  return (
+    <>
       {!character || !selectedId ? (
-        <CharacterSceleton />
+        <CharacterSceleton/>
       ) : (
         <div className={styles.selectedCharacter}>
           <div className={styles.characterWrapper}>
@@ -67,7 +67,7 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
               />
 
               <div className={styles.characterImage}>
-                <img src={character.image} alt={character.name} />
+                <img src={character.image} alt={character.name}/>
               </div>
 
               <button
@@ -111,7 +111,7 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
                 <div className={styles.episodeList}>
                   {character?.episode?.slice(0, 1).map((item, index) => (
                     <Link href={item} key={index}>
-                            Episode {item.split("/").pop()}
+                                            Episode {item.split("/").pop()}
                     </Link>
                   ))}
                 </div>
@@ -119,12 +119,13 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
             </div>
 
             <button className={styles.random} onClick={handleReset}>
-                  Random Character
+                            Random Character
             </button>
           </div>
         </div>
       )}
-    </Suspense>
+
+    </>
   );
 };
 

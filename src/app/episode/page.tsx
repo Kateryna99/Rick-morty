@@ -1,8 +1,11 @@
 import { EpisodesCatalog } from "@/app/episode/EpisodesCatalog/EpisodesCatalog";
+import { Suspense } from "react";
 
 const EpisodesPage = () => {
   return (
-    <EpisodesCatalog />
+    <Suspense fallback={<div>Loading...</div>}>
+      <EpisodesCatalog/>
+    </Suspense>
   )
 }
 
