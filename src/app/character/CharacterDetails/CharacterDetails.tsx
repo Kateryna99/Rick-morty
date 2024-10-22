@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { FC, useEffect } from 'react';
-import { fetchCharacterById, setCharacter } from "@/features/characterSlice";
+import { FC, useEffect, Suspense } from 'react';
+import { fetchCharacterById } from "@/features/characterSlice";
 import { CharacterSceleton } from "@/sceletons/CharacterSceleton";
 
 import styles from "./CharacterDetails.module.scss";
@@ -51,8 +51,8 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
     }
   }, [selectedId]);
 
-  return (
-    <>
+  return  (
+    <Suspense fallback={<CharacterSceleton />}>
       {!character || !selectedId ? (
         <CharacterSceleton />
       ) : (
@@ -111,7 +111,7 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
                 <div className={styles.episodeList}>
                   {character?.episode?.slice(0, 1).map((item, index) => (
                     <Link href={item} key={index}>
-                      Episode {item.split("/").pop()}
+                            Episode {item.split("/").pop()}
                     </Link>
                   ))}
                 </div>
@@ -119,12 +119,12 @@ const CharacterPage: FC<Props> = ({ itemsPerPage }) => {
             </div>
 
             <button className={styles.random} onClick={handleReset}>
-              Random Character
+                  Random Character
             </button>
           </div>
         </div>
       )}
-    </>
+    </Suspense>
   );
 };
 

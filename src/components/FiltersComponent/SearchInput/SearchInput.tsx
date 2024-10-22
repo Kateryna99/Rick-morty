@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./SearchInput.module.scss";
-import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search } from "@/types/Search";
 import { useAppDispatch } from "@/store/hooks";
@@ -97,19 +97,21 @@ export const SearchInput = ({
   };
 
   return (
-    <div className={styles.searchInput}>
-      <h5 className={styles.title}>{title}</h5>
-      <label className={styles.label}>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder={!isTyping ? "" : placeholder}
-          value={queryValue}
-          onChange={handleFilterChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        />
-      </label>
-    </div>
+    <Suspense fallback={null}>
+      <div className={styles.searchInput}>
+        <h5 className={styles.title}>{title}</h5>
+        <label className={styles.label}>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder={!isTyping ? "" : placeholder}
+            value={queryValue}
+            onChange={handleFilterChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+          />
+        </label>
+      </div>
+    </Suspense>
   );
 };
