@@ -1,4 +1,4 @@
-import { FC, Suspense } from "react";
+import { FC, Suspense, useState } from "react";
 import { Character } from "@/types/Character";
 
 import styles from "@/styles/DataList.module.scss";
@@ -12,6 +12,8 @@ interface Props {
 }
 
 export const CharactersList: FC<Props> = ({ currentData }) => {
+  const [isActive, setIsActive] = useState(false);
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const { character } = useAppSelector((state) => state.characters);
@@ -28,24 +30,27 @@ export const CharactersList: FC<Props> = ({ currentData }) => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className={styles.dataList}>
-        {currentData.map((item) => (
-          <div
-            key={item.id}
-            className={classNames(styles.dataCard, {
-              [styles.notSelected]: character?.id && character?.id !== item.id,
-            })}
-            onClick={() => handleCharacterClick(item.id)}
-          >
-            <div className={styles.dataImage}>
-              <img src={item.image} alt={item.name}/>
-            </div>
-
-            <p className={styles.name}>{item.name}</p>
+    <div className={styles.dataList}>
+      {currentData.map((item) => (
+        <div
+          key={item.id}
+          className={classNames(styles.dataCard, {
+            [styles.notSelected]: character?.id && character?.id !== item.id,
+          })}
+          onClick={() => handleCharacterClick(item.id)}
+        >
+          <div className={classNames(styles.dataImage, styles.active)}>
+            <img src={item.image} alt={item.name}/>
           </div>
-        ))}
-      </div>
-    </Suspense>
+
+          <div className={styles.dataInfo}>
+            <p className={styles.name}>{item.name}</p>
+            <span className={classNames(styles.icon, {
+              [styles.active]: isActive
+            })} onClick={() => setIsActive(!isActive)}></span>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 
 .grid {
-  padding: 100px 0 20px;
+  padding: 70px 0 10px;
   align-self: stretch;
 
   display: flex;
@@ -12,11 +12,16 @@
 }
 
 .gridWrapper {
+  max-width: 800px;
+  width: 100%;
+
+  margin: 0 auto;
+
   flex-grow: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: repeat(4, 40vh);
-  gap: 30px;
+  gap: 20px;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -25,7 +30,8 @@
   }
 
   @media (min-width: 1200px) {
-    grid-template-rows: 45vh;
+    grid-template-rows: repeat(2, 40vh);
+    gap: 20px;
   }
 }
 
