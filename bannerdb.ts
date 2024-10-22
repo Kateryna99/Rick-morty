@@ -14,20 +14,19 @@ db.prepare(`
 
 const bannerList = [
   {
-    image: isProcessProduction ? '/Rick-Morty/banner/pickle-rick.jpg' : '/banner/pickle-rick.jpg',
+    image: '/banner/pickle-rick.jpg',
   },
   {
-    image: isProcessProduction ? '/Rick-Morty/banner/red_eyes.jpg' : '/banner/red_eyes.jpg',
+    image: '/banner/red_eyes.jpg',
   },
   {
-    image: isProcessProduction ? '/Rick-Morty/banner/rick_arms.jpg' : '/banner/rick_arms.jpg',
+    image: '/banner/rick_arms.jpg',
   },
   {
-    image: isProcessProduction ? '/Rick-Morty/banner/rick_computer.jpg' :
-      '/banner/rick_computer.jpg',
+    image: '/banner/rick_computer.jpg',
   },
   {
-    image: isProcessProduction ? '/Rick-Morty/banner/voilet_color.jpg' : '/banner/voilet_color.jpg',
+    image: '/banner/voilet_color.jpg',
   },
 ];
 

@@ -8,8 +8,6 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-    /*basePath: isProd ? '/Rick-Morty' : '',
-    assetPrefix: isProd ? '/Rick-Morty/' : '',*/
     images: {
         remotePatterns: [
             {
