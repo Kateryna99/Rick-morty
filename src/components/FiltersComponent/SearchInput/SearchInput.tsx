@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./SearchInput.module.scss";
-import { ChangeEvent, useCallback, useEffect, useState} from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search } from "@/types/Search";
 import { useAppDispatch } from "@/store/hooks";

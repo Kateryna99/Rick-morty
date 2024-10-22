@@ -1,7 +1,7 @@
 "use client";
 
 import { usePagination } from "@/components/pagination/hooks/usePagination";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, Suspense } from "react";
 
 import { fetchCharactersData, setNameQuery } from "@/features/characterSlice";
 
@@ -105,7 +105,7 @@ export const CharactersCatalog = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       {loading && <LoadingPage />}
       {error && <div>Error</div>}
       {!loading && (
@@ -130,6 +130,6 @@ export const CharactersCatalog = () => {
           />
         </BaseCatalogContent>
       )}
-    </>
+    </Suspense>
   );
 };

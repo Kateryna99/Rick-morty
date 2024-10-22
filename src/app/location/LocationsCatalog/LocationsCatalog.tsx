@@ -1,7 +1,7 @@
 "use client";
 
 import { usePagination } from "@/components/pagination/hooks/usePagination";
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, Suspense } from 'react';
 
 import { LoadingPage } from "@/components/loadingPage/LoadingPage";
 import { Pagination } from "@/components/pagination/Pagination";
@@ -78,7 +78,7 @@ export const LocationsCatalog = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       {loading && <LoadingPage />}
       {error && <div>Error</div>}
       {!loading && (
@@ -100,6 +100,6 @@ export const LocationsCatalog = () => {
 
         </BaseCatalogContent>
       )}
-    </>
+    </Suspense>
   );
 };
